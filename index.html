@@ -244,10 +244,11 @@
   .illus-smart h3 { color: #85B7EB; }
   .pillars {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
     margin-top: 1rem;
-  }
+    grid-column: span 50;
+}
   .pillar {
     background: rgba(255,255,255,0.08);
     border-radius: 10px;
@@ -652,44 +653,64 @@
         <h3>⚡ As 12 práticas do XP</h3>
         <div class="pillars">
           <div class="pillar">
-            <div class="p-icon">🧪</div>
-            <div class="p-name">TDD</div>
-            <div class="p-desc">Testes antes do código. O ciclo: Vermelho → Verde → Refatorar.</div>
+            <div class="p-icon">🎲</div>
+            <div class="p-name">Planning Game</div>
+            <div class="p-desc">Cliente e dev priorizam juntas as user stories a cada iteração, equilibrando valor de negócio e esforço técnico.</div>
           </div>
           <div class="pillar">
-            <div class="p-icon">👥</div>
-            <div class="p-name">Pair Programming</div>
-            <div class="p-desc">Dois devs, um teclado. Revisão em tempo real, menos bugs.</div>
+            <div class="p-icon">🙋</div>
+            <div class="p-name">Cliente Presente</div>
+            <div class="p-desc">Um representante do cliente fica disponível no dia a dia para tirar dúvidas e validar entregas em tempo real.</div>
+          </div>
+          <div class="pillar">
+            <div class="p-icon">📦</div>
+            <div class="p-name">Entregas Pequenas</div>
+            <div class="p-desc">Releases frequentes com escopo mínimo. Cada entrega já gera valor e permite ajuste de rota antes de investir mais.</div>
+          </div>
+          <div class="pillar">
+            <div class="p-icon">✂️</div>
+            <div class="p-name">Design Simples</div>
+            <div class="p-desc">O código mais simples que funcione hoje. YAGNI: evite abstrações prematuras — complexidade só quando necessária.</div>
+          </div>
+          <div class="pillar">
+            <div class="p-icon">🧪</div>
+            <div class="p-name">TDD</div>
+            <div class="p-desc">Escreva o teste antes do código. Ciclo Red → Green → Refactor garante cobertura e design guiado por comportamento.</div>
           </div>
           <div class="pillar">
             <div class="p-icon">♻️</div>
             <div class="p-name">Refatoração</div>
-            <div class="p-desc">Melhorar a estrutura do código sem alterar comportamento.</div>
+            <div class="p-desc">Melhora contínua da estrutura interna sem alterar o comportamento externo. Deixa o código limpo para a próxima mudança.</div>
+          </div>
+          <div class="pillar">
+            <div class="p-icon">👥</div>
+            <div class="p-name">Pair Programming</div>
+            <div class="p-desc">Dois devs, um teclado: um pilota, o outro navega. Troca de papel constante reduz bugs e difunde conhecimento.</div>
+          </div>
+          <div class="pillar">
+            <div class="p-icon">🏘️</div>
+            <div class="p-name">Propriedade Coletiva</div>
+            <div class="p-desc">Qualquer dev pode e deve melhorar qualquer parte do código. Nenhum módulo tem dono — o time todo é responsável.</div>
           </div>
           <div class="pillar">
             <div class="p-icon">🔄</div>
             <div class="p-name">Integração Contínua</div>
-            <div class="p-desc">Código integrado ao main várias vezes por dia.</div>
+            <div class="p-desc">Commits no branch principal várias vezes por dia, sempre com testes passando. Elimina o inferno da integração final.</div>
           </div>
           <div class="pillar">
-            <div class="p-icon">🎯</div>
-            <div class="p-name">Small Releases</div>
-            <div class="p-desc">Entregas pequenas e frequentes ao cliente.</div>
-          </div>
-          <div class="pillar">
-            <div class="p-icon">📖</div>
-            <div class="p-name">Design Simples</div>
-            <div class="p-desc">O design mais simples que funciona agora. Sem over-engineering.</div>
-          </div>
-          <div class="pillar">
-            <div class="p-icon">👤</div>
-            <div class="p-name">Cliente On-site</div>
-            <div class="p-desc">Cliente disponível para tirar dúvidas a qualquer hora.</div>
+            <div class="p-icon">⚖️</div>
+            <div class="p-name">Ritmo Sustentável</div>
+            <div class="p-desc">40h/semana é o limite. Time descansado entrega melhor. Horas extras viram dívida técnica disfarçada de produtividade.</div>
           </div>
           <div class="pillar">
             <div class="p-icon">📋</div>
-            <div class="p-name">User Stories</div>
-            <div class="p-desc">Requisitos descritos na perspectiva do usuário final.</div>
+            <div class="p-name">Testes do Cliente</div>
+            <div class="p-desc">Critérios de aceitação escritos pelo cliente validam cada user story. Automatizados, garantem que o negócio funciona.</div>
+          </div>
+          <div class="pillar">
+            <div class="p-icon">📐</div>
+            <div class="p-name">Código Padronizado</div>
+            <div class="p-desc">Todos seguem o mesmo estilo — indentação, nomenclatura, estrutura. Propriedade coletiva só funciona com padrão comum para todos.</div>
           </div>
         </div>
       </div>
@@ -997,7 +1018,7 @@
       <div class="sidebar-widget">
         <div class="widget-title">Leitura recomendada</div>
         <ul class="checklist">
-          <li><span class="ck ck-xp">📗</span>Extreme Programming Explained — Kent Beck (2004)</li>
+          <li><span class="ck ck-xp">📗</span><a href="https://www.sydle.com/blog/extreme-programming-what-is-it-and-how-does-it-work-602ee205da4d096809438c9c" target="_blank">Programação Extrema: O que é e como funciona? — Sidle (2024)</a></li>
           <li><span class="ck ck-smart">📘</span>There's a S.M.A.R.T. Way to Write Management Goals — Doran (1981)</li>
           <li><span class="ck ck-xp">📙</span>Clean Code — Robert C. Martin</li>
           <li><span class="ck ck-smart">📕</span>Measure What Matters — John Doerr</li>
@@ -1129,4 +1150,3 @@
 </script>
 </body>
 </html>
-
