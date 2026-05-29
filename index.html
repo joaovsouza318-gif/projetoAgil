@@ -1,1 +1,1132 @@
-riogjrjgoijgr
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AgileMind Blog — XP & SMART</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #F7F4EE;
+    --bg2: #EDEAE0;
+    --ink: #1A1814;
+    --ink2: #4A4740;
+    --ink3: #7A7670;
+    --accent: #D4522A;
+    --accent2: #2A6DD4;
+    --accent3: #1D9E75;
+    --yellow: #F5C84A;
+    --card: #FFFFFF;
+    --border: rgba(26,24,20,0.12);
+    --radius: 14px;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--ink); line-height: 1.7; font-size: 16px; }
+  img { max-width: 100%; display: block; }
+
+  /* HEADER */
+  header {
+    background: var(--ink);
+    color: #fff;
+    padding: 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 3px solid var(--accent);
+  }
+  .header-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+  }
+  .logo {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 1.4rem;
+    letter-spacing: -0.5px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .logo-dot { width: 10px; height: 10px; background: var(--accent); border-radius: 50%; display: inline-block; }
+  nav { display: flex; gap: 2rem; }
+  nav a {
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: color 0.2s;
+    letter-spacing: 0.02em;
+  }
+  nav a:hover { color: #fff; }
+
+  /* HERO */
+  .hero {
+    background: var(--ink);
+    color: #fff;
+    padding: 5rem 2rem 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -40px; right: -40px;
+    width: 360px; height: 360px;
+    background: var(--accent);
+    border-radius: 50%;
+    opacity: 0.08;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -60px; left: 60px;
+    width: 240px; height: 240px;
+    background: var(--accent2);
+    border-radius: 50%;
+    opacity: 0.07;
+  }
+  .hero-inner { max-width: 1100px; margin: 0 auto; position: relative; z-index: 1; }
+  .hero-tag {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    font-family: 'Syne', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 4px 14px;
+    border-radius: 4px;
+    margin-bottom: 1.5rem;
+  }
+  .hero h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2.8rem, 6vw, 5rem);
+    line-height: 1.08;
+    letter-spacing: -1.5px;
+    max-width: 720px;
+    margin-bottom: 1.5rem;
+  }
+  .hero h1 em { color: var(--yellow); font-style: italic; }
+  .hero p {
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.72);
+    max-width: 520px;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+  }
+  .hero-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--accent);
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    padding: 14px 28px;
+    border-radius: 8px;
+    transition: transform 0.15s, background 0.15s;
+    letter-spacing: 0.01em;
+  }
+  .hero-cta:hover { background: #B8421E; transform: translateY(-1px); }
+  .hero-stats {
+    display: flex;
+    gap: 3rem;
+    margin-top: 3.5rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid rgba(255,255,255,0.12);
+  }
+  .hero-stat { }
+  .hero-stat .n {
+    font-family: 'Syne', sans-serif;
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--yellow);
+    display: block;
+    line-height: 1;
+  }
+  .hero-stat .l { font-size: 0.8rem; color: rgba(255,255,255,0.55); letter-spacing: 0.04em; margin-top: 4px; }
+
+  /* MAIN LAYOUT */
+  .page { max-width: 1100px; margin: 0 auto; padding: 3rem 2rem 5rem; }
+  .grid-main { display: grid; grid-template-columns: 1fr 340px; gap: 3rem; align-items: start; }
+
+  /* SECTION HEADERS */
+  .section-label {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+  }
+  .section-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 2rem;
+    letter-spacing: -0.5px;
+    color: var(--ink);
+    margin-bottom: 1rem;
+  }
+
+  /* ARTICLE CARDS */
+  .article-card {
+    background: var(--card);
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    overflow: hidden;
+    margin-bottom: 2rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .article-card:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(0,0,0,0.1); }
+  .article-card .card-image {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    background: var(--bg2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 5rem;
+  }
+  .card-body { padding: 1.5rem; }
+  .card-tag {
+    display: inline-block;
+    font-family: 'Syne', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 4px;
+    margin-bottom: 0.75rem;
+  }
+  .tag-xp { background: #FBEAF0; color: #993556; }
+  .tag-smart { background: #E6F1FB; color: #185FA5; }
+  .tag-meme { background: #FAEEDA; color: #854F0B; }
+  .tag-tip { background: #EAF3DE; color: #3B6D11; }
+  .card-body h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.45rem;
+    line-height: 1.25;
+    letter-spacing: -0.3px;
+    color: var(--ink);
+    margin-bottom: 0.6rem;
+  }
+  .card-body p { font-size: 0.95rem; color: var(--ink2); line-height: 1.7; margin-bottom: 1rem; }
+  .card-meta { font-size: 0.82rem; color: var(--ink3); display: flex; gap: 1rem; align-items: center; }
+  .card-meta span { display: flex; align-items: center; gap: 4px; }
+
+  /* ILLUSTRATION BOXES */
+  .illus-box {
+    border-radius: var(--radius);
+    padding: 2rem;
+    margin-bottom: 2rem;
+  }
+  .illus-xp { background: linear-gradient(135deg, #1A1814 0%, #2D1F1A 100%); color: #fff; }
+  .illus-smart { background: linear-gradient(135deg, #0D1F35 0%, #0F3058 100%); color: #fff; }
+  .illus-box h3 {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 800;
+    letter-spacing: -0.3px;
+    margin-bottom: 1rem;
+  }
+  .illus-xp h3 { color: var(--yellow); }
+  .illus-smart h3 { color: #85B7EB; }
+  .pillars {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 1rem;
+  }
+  .pillar {
+    background: rgba(255,255,255,0.08);
+    border-radius: 10px;
+    padding: 12px 14px;
+    border: 1px solid rgba(255,255,255,0.12);
+  }
+  .pillar .p-icon { font-size: 1.4rem; margin-bottom: 6px; }
+  .pillar .p-name { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 0.82rem; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 4px; }
+  .illus-xp .pillar .p-name { color: var(--yellow); }
+  .illus-smart .pillar .p-name { color: #85B7EB; }
+  .pillar .p-desc { font-size: 0.82rem; color: rgba(255,255,255,0.65); line-height: 1.5; }
+
+  /* MEME SECTION */
+  .meme-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  .meme-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    transition: transform 0.2s;
+  }
+  .meme-card:hover { transform: scale(1.02); }
+  .meme-img {
+    background: var(--bg2);
+    height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    flex-direction: column;
+    gap: 8px;
+    position: relative;
+    overflow: hidden;
+    padding: 1rem;
+    text-align: center;
+  }
+  .meme-text-top {
+    font-family: Impact, 'Arial Black', sans-serif;
+    font-size: 1rem;
+    text-transform: uppercase;
+    color: #fff;
+    text-shadow: 2px 2px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
+    position: absolute;
+    top: 8px; left: 0; right: 0;
+    padding: 0 10px;
+    line-height: 1.2;
+  }
+  .meme-text-bot {
+    font-family: Impact, 'Arial Black', sans-serif;
+    font-size: 1rem;
+    text-transform: uppercase;
+    color: #fff;
+    text-shadow: 2px 2px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
+    position: absolute;
+    bottom: 8px; left: 0; right: 0;
+    padding: 0 10px;
+    line-height: 1.2;
+  }
+  .meme-bg-1 { background: linear-gradient(135deg, #2D3A6E, #5A3A8A); }
+  .meme-bg-2 { background: linear-gradient(135deg, #1A3A2A, #2D6E4A); }
+  .meme-bg-3 { background: linear-gradient(135deg, #6E2D1A, #AA4422); }
+  .meme-bg-4 { background: linear-gradient(135deg, #1A2D4A, #2A5A8A); }
+  .meme-caption { padding: 10px 14px; font-size: 0.82rem; color: var(--ink3); font-style: italic; }
+
+  /* QUOTE */
+  .pull-quote {
+    border-left: 4px solid var(--accent);
+    padding: 1.25rem 1.5rem;
+    margin: 2rem 0;
+    background: var(--card);
+    border-radius: 0 var(--radius) var(--radius) 0;
+  }
+  .pull-quote p {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.25rem;
+    font-style: italic;
+    color: var(--ink);
+    line-height: 1.55;
+    margin: 0 0 8px 0;
+  }
+  .pull-quote cite { font-size: 0.82rem; color: var(--ink3); }
+
+  /* QUIZ */
+  .quiz-section { margin: 3rem 0; }
+  .quiz-box {
+    background: var(--ink);
+    border-radius: 18px;
+    padding: 2.5rem;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+  }
+  .quiz-box::before {
+    content: '?';
+    position: absolute;
+    right: -10px; top: -20px;
+    font-family: 'Syne', sans-serif;
+    font-size: 14rem;
+    font-weight: 800;
+    color: rgba(255,255,255,0.04);
+    line-height: 1;
+  }
+  .quiz-label {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--yellow);
+    margin-bottom: 0.5rem;
+  }
+  .quiz-box h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.6rem;
+    letter-spacing: -0.3px;
+    margin-bottom: 0.5rem;
+  }
+  .quiz-box > p { color: rgba(255,255,255,0.6); font-size: 0.9rem; margin-bottom: 2rem; }
+  .quiz-q {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 12px;
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 1.25rem;
+    display: none;
+  }
+  .quiz-q.active { display: block; }
+  .quiz-q .q-num {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--yellow);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .quiz-q .q-text {
+    font-size: 1.05rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+  }
+  .quiz-options { display: flex; flex-direction: column; gap: 8px; }
+  .quiz-opt {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.14);
+    border-radius: 8px;
+    padding: 10px 16px;
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.85);
+    cursor: pointer;
+    transition: background 0.15s, border-color 0.15s;
+    text-align: left;
+  }
+  .quiz-opt:hover { background: rgba(255,255,255,0.14); border-color: rgba(255,255,255,0.3); }
+  .quiz-opt.correct { background: rgba(29,158,117,0.3); border-color: #1D9E75; color: #fff; }
+  .quiz-opt.wrong { background: rgba(212,82,42,0.3); border-color: var(--accent); color: #fff; }
+  .quiz-opt.disabled { cursor: default; }
+  .quiz-feedback {
+    margin-top: 12px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 0.88rem;
+    display: none;
+  }
+  .quiz-feedback.show { display: block; }
+  .quiz-feedback.good { background: rgba(29,158,117,0.2); color: #5DCAA5; border: 1px solid rgba(29,158,117,0.3); }
+  .quiz-feedback.bad { background: rgba(212,82,42,0.2); color: #F0997B; border: 1px solid rgba(212,82,42,0.3); }
+  .quiz-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.5rem;
+  }
+  .quiz-nav button {
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 24px;
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background 0.15s;
+    letter-spacing: 0.02em;
+  }
+  .quiz-nav button:hover { background: #B8421E; }
+  .quiz-nav button:disabled { opacity: 0.4; cursor: default; }
+  .quiz-progress {
+    display: flex;
+    gap: 6px;
+  }
+  .prog-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.2);
+    transition: background 0.2s;
+  }
+  .prog-dot.done { background: var(--yellow); }
+  .prog-dot.active { background: #fff; }
+  .quiz-result {
+    text-align: center;
+    padding: 1rem 0;
+    display: none;
+  }
+  .quiz-result.show { display: block; }
+  .quiz-result .score {
+    font-family: 'Syne', sans-serif;
+    font-size: 4rem;
+    font-weight: 800;
+    color: var(--yellow);
+    line-height: 1;
+    display: block;
+    margin-bottom: 8px;
+  }
+  .quiz-result p { color: rgba(255,255,255,0.7); font-size: 1rem; margin-bottom: 1.5rem; }
+  .quiz-result button {
+    background: rgba(255,255,255,0.12);
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 8px;
+    padding: 10px 24px;
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+  .quiz-result button:hover { background: rgba(255,255,255,0.2); }
+
+  /* SIDEBAR */
+  .sidebar { }
+  .sidebar-widget {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .widget-title {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .widget-title::before { content: ''; display: inline-block; width: 4px; height: 4px; background: var(--accent); border-radius: 50%; }
+  .checklist { list-style: none; }
+  .checklist li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--bg2);
+    font-size: 0.88rem;
+    color: var(--ink2);
+    line-height: 1.5;
+  }
+  .checklist li:last-child { border-bottom: none; }
+  .checklist li .ck { width: 18px; height: 18px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 0.7rem; margin-top: 1px; }
+  .ck-xp { background: #FBEAF0; color: #993556; }
+  .ck-smart { background: #E6F1FB; color: #185FA5; }
+  .tip-box {
+    background: var(--yellow);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .tip-box .tip-label {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(0,0,0,0.5);
+    margin-bottom: 6px;
+  }
+  .tip-box p { font-size: 0.9rem; color: var(--ink); font-weight: 500; line-height: 1.6; }
+  .comparison-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
+  .comparison-table th {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 0.75rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 8px;
+    text-align: left;
+    color: var(--ink3);
+    border-bottom: 1px solid var(--bg2);
+  }
+  .comparison-table td { padding: 8px; border-bottom: 1px solid var(--bg2); color: var(--ink2); vertical-align: top; }
+  .comparison-table tr:last-child td { border-bottom: none; }
+  .comparison-table .badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.72rem;
+    font-weight: 600;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--ink);
+    color: rgba(255,255,255,0.5);
+    text-align: center;
+    padding: 2.5rem;
+    font-size: 0.85rem;
+  }
+  footer strong { color: #fff; }
+
+  @media (max-width: 800px) {
+    .grid-main { grid-template-columns: 1fr; }
+    .pillars { grid-template-columns: 1fr; }
+    .meme-grid { grid-template-columns: 1fr; }
+    .hero-stats { gap: 1.5rem; flex-wrap: wrap; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="logo">
+      <span class="logo-dot"></span>
+      AgileMind
+    </div>
+    <nav>
+      <a href="#xp">XP</a>
+      <a href="#smart">SMART</a>
+      <a href="#memes">Memes</a>
+      <a href="#quiz">Quiz</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <span class="hero-tag">Metodologias Ágeis</span>
+    <h1>Domine <em>XP</em> e<br>SMART de vez</h1>
+    <p>Entenda as duas abordagens que transformaram o desenvolvimento de software e a gestão de metas — com exemplos reais, memes e um quiz interativo.</p>
+    <a href="#quiz" class="hero-cta">→ Testar meu conhecimento</a>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <span class="n">12</span>
+        <span class="l">Práticas XP</span>
+      </div>
+      <div class="hero-stat">
+        <span class="n">5</span>
+        <span class="l">Critérios SMART</span>
+      </div>
+      <div class="hero-stat">
+        <span class="n">8</span>
+        <span class="l">Questões no Quiz</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<main class="page">
+  <div class="grid-main">
+    <div class="content-col">
+
+      <!-- XP ARTICLE -->
+      <div id="xp" class="article-card">
+        <div class="card-image" style="background: #1A1814; align-items: flex-start; justify-content: flex-start; padding: 0; overflow: hidden;">
+          <svg width="100%" height="240" viewBox="0 0 700 240" xmlns="http://www.w3.org/2000/svg">
+            <rect width="700" height="240" fill="#1A1814"/>
+            <circle cx="580" cy="-20" r="180" fill="#D4522A" opacity="0.15"/>
+            <circle cx="100" cy="260" r="140" fill="#F5C84A" opacity="0.08"/>
+            <text x="40" y="80" font-family="serif" font-size="72" font-style="italic" fill="#D4522A" opacity="0.9">XP</text>
+            <text x="40" y="112" font-family="sans-serif" font-size="12" fill="rgba(255,255,255,0.5)" letter-spacing="3" text-decoration="none" font-weight="400">EXTREME PROGRAMMING</text>
+            <rect x="40" y="130" width="280" height="1" fill="rgba(255,255,255,0.1)"/>
+            <text x="40" y="158" font-family="sans-serif" font-size="13" fill="rgba(255,255,255,0.7)">🔄 Iterativo</text>
+            <text x="160" y="158" font-family="sans-serif" font-size="13" fill="rgba(255,255,255,0.7)">🤝 Colaborativo</text>
+            <text x="290" y="158" font-family="sans-serif" font-size="13" fill="rgba(255,255,255,0.7)">⚡ Rápido</text>
+            <text x="40" y="190" font-family="sans-serif" font-size="13" fill="rgba(255,255,255,0.7)">✅ Testes primeiro</text>
+            <text x="200" y="190" font-family="sans-serif" font-size="13" fill="rgba(255,255,255,0.7)">♻️ Refatoração</text>
+            <text x="370" y="190" font-family="sans-serif" font-size="13" fill="rgba(255,255,255,0.7)">👥 Par a par</text>
+          </svg>
+        </div>
+        <div class="card-body">
+          <span class="card-tag tag-xp">Extreme Programming</span>
+          <h2>O que é XP e por que ela ainda importa?</h2>
+          <p>Extreme Programming (XP) é uma metodologia ágil criada por Kent Beck no final dos anos 90 que leva boas práticas de desenvolvimento ao extremo. O foco é entregar software funcionando em ciclos curtos, priorizando comunicação intensa, feedback contínuo e qualidade técnica acima de tudo.</p>
+          <p>XP opera sobre cinco valores centrais: <strong>comunicação</strong> (tudo documentado e discutido), <strong>simplicidade</strong> (fazer apenas o necessário hoje), <strong>feedback</strong> (testes automatizados a cada mudança), <strong>coragem</strong> (refatorar quando preciso, sem medo) e <strong>respeito</strong> (pelo código e pelas pessoas).</p>
+        </div>
+      </div>
+
+      <!-- XP PILLARS BOX -->
+      <div class="illus-box illus-xp">
+        <h3>⚡ As 12 práticas do XP</h3>
+        <div class="pillars">
+          <div class="pillar">
+            <div class="p-icon">🧪</div>
+            <div class="p-name">TDD</div>
+            <div class="p-desc">Testes antes do código. O ciclo: Vermelho → Verde → Refatorar.</div>
+          </div>
+          <div class="pillar">
+            <div class="p-icon">👥</div>
+            <div class="p-name">Pair Programming</div>
+            <div class="p-desc">Dois devs, um teclado. Revisão em tempo real, menos bugs.</div>
+          </div>
+          <div class="pillar">
+            <div class="p-icon">♻️</div>
+            <div class="p-name">Refatoração</div>
+            <div class="p-desc">Melhorar a estrutura do código sem alterar comportamento.</div>
+          </div>
+          <div class="pillar">
+            <div class="p-icon">🔄</div>
+            <div class="p-name">Integração Contínua</div>
+            <div class="p-desc">Código integrado ao main várias vezes por dia.</div>
+          </div>
+          <div class="pillar">
+            <div class="p-icon">🎯</div>
+            <div class="p-name">Small Releases</div>
+            <div class="p-desc">Entregas pequenas e frequentes ao cliente.</div>
+          </div>
+          <div class="pillar">
+            <div class="p-icon">📖</div>
+            <div class="p-name">Design Simples</div>
+            <div class="p-desc">O design mais simples que funciona agora. Sem over-engineering.</div>
+          </div>
+          <div class="pillar">
+            <div class="p-icon">👤</div>
+            <div class="p-name">Cliente On-site</div>
+            <div class="p-desc">Cliente disponível para tirar dúvidas a qualquer hora.</div>
+          </div>
+          <div class="pillar">
+            <div class="p-icon">📋</div>
+            <div class="p-name">User Stories</div>
+            <div class="p-desc">Requisitos descritos na perspectiva do usuário final.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pull-quote">
+        <p>"O XP não é sobre fazer mais — é sobre fazer melhor. Menos código, mais valor, mais feedback."</p>
+        <cite>— Kent Beck, criador do Extreme Programming</cite>
+      </div>
+
+      <!-- SMART ARTICLE -->
+      <div id="smart" class="article-card" style="margin-top: 2.5rem;">
+        <div class="card-image" style="background: #0D1F35; padding: 0; overflow: hidden;">
+          <svg width="100%" height="240" viewBox="0 0 700 240" xmlns="http://www.w3.org/2000/svg">
+            <rect width="700" height="240" fill="#0D1F35"/>
+            <circle cx="600" cy="280" r="200" fill="#2A6DD4" opacity="0.12"/>
+            <text x="40" y="80" font-family="sans-serif" font-weight="800" font-size="64" fill="#85B7EB" opacity="0.9">S·M·A·R·T</text>
+            <text x="40" y="115" font-family="sans-serif" font-size="11" fill="rgba(255,255,255,0.4)" letter-spacing="3">METODOLOGIA DE METAS</text>
+            <rect x="40" y="130" width="500" height="1" fill="rgba(255,255,255,0.08)"/>
+            <rect x="40" y="148" width="8" height="8" rx="2" fill="#2A6DD4"/>
+            <text x="58" y="158" font-family="sans-serif" font-size="12" fill="rgba(255,255,255,0.6)">Específico (Specific)</text>
+            <rect x="40" y="168" width="8" height="8" rx="2" fill="#2A6DD4"/>
+            <text x="58" y="178" font-family="sans-serif" font-size="12" fill="rgba(255,255,255,0.6)">Mensurável (Measurable)</text>
+            <rect x="240" y="148" width="8" height="8" rx="2" fill="#85B7EB"/>
+            <text x="258" y="158" font-family="sans-serif" font-size="12" fill="rgba(255,255,255,0.6)">Atingível (Achievable)</text>
+            <rect x="240" y="168" width="8" height="8" rx="2" fill="#85B7EB"/>
+            <text x="258" y="178" font-family="sans-serif" font-size="12" fill="rgba(255,255,255,0.6)">Relevante (Relevant)</text>
+            <rect x="460" y="148" width="8" height="8" rx="2" fill="#B5D4F4"/>
+            <text x="478" y="158" font-family="sans-serif" font-size="12" fill="rgba(255,255,255,0.6)">Temporal (Time-bound)</text>
+          </svg>
+        </div>
+        <div class="card-body">
+          <span class="card-tag tag-smart">Metodologia SMART</span>
+          <h2>SMART: defina metas que realmente funcionam</h2>
+          <p>SMART é um framework para definição de objetivos criado por George T. Doran em 1981. Cada letra representa um critério que, quando aplicado, transforma uma meta vaga em um compromisso concreto, mensurável e realizável.</p>
+          <p>Enquanto o XP guia o processo de desenvolvimento, o SMART guia o planejamento estratégico. Os dois se complementam perfeitamente em equipes ágeis: o SMART define O QUÊ alcançar, e o XP define COMO chegar lá.</p>
+        </div>
+      </div>
+
+      <!-- SMART PILLARS BOX -->
+      <div class="illus-box illus-smart">
+        <h3>🎯 Quebrando o SMART na prática</h3>
+        <div class="pillars">
+          <div class="pillar">
+            <div class="p-icon">🔍</div>
+            <div class="p-name">S — Específico</div>
+            <div class="p-desc">Quem, o quê, onde, por quê. Não "melhorar vendas" — "aumentar vendas de produto X em SP".</div>
+          </div>
+          <div class="pillar">
+            <div class="p-icon">📊</div>
+            <div class="p-name">M — Mensurável</div>
+            <div class="p-desc">Defina um número. "Reduzir churn de 8% para 5% no trimestre."</div>
+          </div>
+          <div class="pillar">
+            <div class="p-icon">✅</div>
+            <div class="p-name">A — Atingível</div>
+            <div class="p-desc">Ambicioso mas realista. Considere recursos, tempo e capacidade do time.</div>
+          </div>
+          <div class="pillar">
+            <div class="p-icon">🔗</div>
+            <div class="p-name">R — Relevante</div>
+            <div class="p-desc">Alinhado ao objetivo maior. Por que isso importa para o negócio agora?</div>
+          </div>
+          <div class="pillar" style="grid-column: 1 / -1;">
+            <div class="p-icon">⏰</div>
+            <div class="p-name">T — Temporal</div>
+            <div class="p-desc">Toda meta precisa de prazo. Sem deadline, não é meta — é sonho. "Até 31 de dezembro" fecha o compromisso.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MEME SECTION -->
+      <div id="memes" style="margin-top: 3rem;">
+        <p class="section-label">Leveza também é ágil</p>
+        <h2 class="section-title">Memes do Universo Ágil</h2>
+        <div class="meme-grid">
+          <div class="meme-card">
+            <div class="meme-img meme-bg-1">
+              <span class="meme-text-top">CLIENTE: "É SIMPLES,<br>SÓ MUDA UMA COISINHA"</span>
+              <span style="font-size: 3rem;">😵‍💫</span>
+              <span class="meme-text-bot">DEV DEPOIS DO SPRINT:<br>*ROLLBACK NAS METAS SMART*</span>
+            </div>
+            <div class="meme-caption">Quando a meta de "manutenção simples" não era muito A (Atingível)</div>
+          </div>
+          <div class="meme-card">
+            <div class="meme-img meme-bg-2">
+              <span class="meme-text-top">PAIR PROGRAMMING:<br>"VOU APENAS OLHAR"</span>
+              <span style="font-size: 3rem;">👀</span>
+              <span class="meme-text-bot">2 HORAS DEPOIS:<br>DOIS TECLADOS, ZERO COMMITS</span>
+            </div>
+            <div class="meme-caption">A prática do XP que começa como revisão e vira uma filosofia de vida</div>
+          </div>
+          <div class="meme-card">
+            <div class="meme-img meme-bg-3">
+              <span class="meme-text-top">META DO SPRINT:<br>"ENTREGAR ATÉ SEXTA"</span>
+              <span style="font-size: 3rem;">📅</span>
+              <span class="meme-text-bot">SEXTA ÀS 23H59:<br>*CRIA PR*</span>
+            </div>
+            <div class="meme-caption">T de Time-bound do SMART sendo respeitado... na última instância</div>
+          </div>
+          <div class="meme-card">
+            <div class="meme-img meme-bg-4">
+              <span class="meme-text-top">TDD NO XP: TESTE FALHA</span>
+              <span style="font-size: 3rem;">🟥🟩</span>
+              <span class="meme-text-bot">EU: PERFEITO, O TESTE<br>ESTÁ FUNCIONANDO</span>
+            </div>
+            <div class="meme-caption">O ciclo Red-Green-Refactor visto por quem acabou de descobrir o TDD</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- QUIZ -->
+      <div id="quiz" class="quiz-section">
+        <div class="quiz-box">
+          <div class="quiz-label">🧠 Teste seus conhecimentos</div>
+          <h3>Quiz: XP & SMART</h3>
+          <p>8 questões para ver se você absorveu o conteúdo. Boa sorte!</p>
+
+          <div id="quiz-questions">
+            <!-- Q1 -->
+            <div class="quiz-q active" data-q="0">
+              <div class="q-num">Pergunta 1 de 8</div>
+              <div class="q-text">O que significa a sigla TDD no contexto do Extreme Programming?</div>
+              <div class="quiz-options">
+                <button class="quiz-opt" data-correct="false">Technical Development Design</button>
+                <button class="quiz-opt" data-correct="true">Test-Driven Development</button>
+                <button class="quiz-opt" data-correct="false">Team Daily Discussion</button>
+                <button class="quiz-opt" data-correct="false">Task Definition Document</button>
+              </div>
+              <div class="quiz-feedback"></div>
+            </div>
+            <!-- Q2 -->
+            <div class="quiz-q" data-q="1">
+              <div class="q-num">Pergunta 2 de 8</div>
+              <div class="q-text">No SMART, a letra "M" representa qual critério?</div>
+              <div class="quiz-options">
+                <button class="quiz-opt" data-correct="false">Motivado</button>
+                <button class="quiz-opt" data-correct="false">Muito ambicioso</button>
+                <button class="quiz-opt" data-correct="true">Mensurável (Measurable)</button>
+                <button class="quiz-opt" data-correct="false">Manejável</button>
+              </div>
+              <div class="quiz-feedback"></div>
+            </div>
+            <!-- Q3 -->
+            <div class="quiz-q" data-q="2">
+              <div class="q-num">Pergunta 3 de 8</div>
+              <div class="q-text">Qual foi o criador do Extreme Programming (XP)?</div>
+              <div class="quiz-options">
+                <button class="quiz-opt" data-correct="false">Jeff Sutherland</button>
+                <button class="quiz-opt" data-correct="false">Martin Fowler</button>
+                <button class="quiz-opt" data-correct="true">Kent Beck</button>
+                <button class="quiz-opt" data-correct="false">Robert C. Martin</button>
+              </div>
+              <div class="quiz-feedback"></div>
+            </div>
+            <!-- Q4 -->
+            <div class="quiz-q" data-q="3">
+              <div class="q-num">Pergunta 4 de 8</div>
+              <div class="q-text">Qual meta está mais alinhada ao critério SMART?</div>
+              <div class="quiz-options">
+                <button class="quiz-opt" data-correct="false">Melhorar a satisfação do cliente</button>
+                <button class="quiz-opt" data-correct="false">Crescer mais esse ano</button>
+                <button class="quiz-opt" data-correct="true">Aumentar o NPS de 42 para 55 até 30/06/2025</button>
+                <button class="quiz-opt" data-correct="false">Focar na qualidade dos produtos</button>
+              </div>
+              <div class="quiz-feedback"></div>
+            </div>
+            <!-- Q5 -->
+            <div class="quiz-q" data-q="4">
+              <div class="q-num">Pergunta 5 de 8</div>
+              <div class="q-text">No XP, "Pair Programming" consiste em:</div>
+              <div class="quiz-options">
+                <button class="quiz-opt" data-correct="false">Dois times trabalhando em paralelo na mesma feature</button>
+                <button class="quiz-opt" data-correct="true">Dois desenvolvedores dividindo o mesmo computador — um codifica, outro revisa</button>
+                <button class="quiz-opt" data-correct="false">Um desenvolvedor sênior revisando o código de um júnior após a entrega</button>
+                <button class="quiz-opt" data-correct="false">Pareamento de dev com o cliente para levantar requisitos</button>
+              </div>
+              <div class="quiz-feedback"></div>
+            </div>
+            <!-- Q6 -->
+            <div class="quiz-q" data-q="5">
+              <div class="q-num">Pergunta 6 de 8</div>
+              <div class="q-text">Qual dos cinco valores do XP se refere a não ter medo de reestruturar o código quando necessário?</div>
+              <div class="quiz-options">
+                <button class="quiz-opt" data-correct="false">Comunicação</button>
+                <button class="quiz-opt" data-correct="false">Respeito</button>
+                <button class="quiz-opt" data-correct="false">Simplicidade</button>
+                <button class="quiz-opt" data-correct="true">Coragem</button>
+              </div>
+              <div class="quiz-feedback"></div>
+            </div>
+            <!-- Q7 -->
+            <div class="quiz-q" data-q="6">
+              <div class="q-num">Pergunta 7 de 8</div>
+              <div class="q-text">A letra "R" do SMART pode ser traduzida como:</div>
+              <div class="quiz-options">
+                <button class="quiz-opt" data-correct="false">Realizável</button>
+                <button class="quiz-opt" data-correct="true">Relevante (alinhado ao objetivo maior)</button>
+                <button class="quiz-opt" data-correct="false">Rápido de executar</button>
+                <button class="quiz-opt" data-correct="false">Responsável (tem um dono)</button>
+              </div>
+              <div class="quiz-feedback"></div>
+            </div>
+            <!-- Q8 -->
+            <div class="quiz-q" data-q="7">
+              <div class="q-num">Pergunta 8 de 8</div>
+              <div class="q-text">No XP, "Integração Contínua" significa:</div>
+              <div class="quiz-options">
+                <button class="quiz-opt" data-correct="false">Reunião diária de status do time</button>
+                <button class="quiz-opt" data-correct="false">Deploy automático em produção a cada feature</button>
+                <button class="quiz-opt" data-correct="true">Integrar o código ao repositório principal várias vezes ao dia, com testes automáticos</button>
+                <button class="quiz-opt" data-correct="false">Integração entre times de produto e engenharia semanalmente</button>
+              </div>
+              <div class="quiz-feedback"></div>
+            </div>
+          </div>
+
+          <div class="quiz-result" id="quiz-result">
+            <span class="score" id="score-display">0/8</span>
+            <p id="score-msg">Vamos ver como você foi!</p>
+            <button onclick="resetQuiz()">↺ Refazer o quiz</button>
+          </div>
+
+          <div class="quiz-nav" id="quiz-nav">
+            <div class="quiz-progress" id="progress-dots">
+              <div class="prog-dot active"></div>
+              <div class="prog-dot"></div>
+              <div class="prog-dot"></div>
+              <div class="prog-dot"></div>
+              <div class="prog-dot"></div>
+              <div class="prog-dot"></div>
+              <div class="prog-dot"></div>
+              <div class="prog-dot"></div>
+            </div>
+            <button id="btn-next" onclick="nextQuestion()" disabled>Próxima →</button>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- end content-col -->
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="tip-box">
+        <div class="tip-label">💡 Dica rápida</div>
+        <p>XP e SMART não competem — eles se complementam. Use SMART para definir O QUÊ entregar e XP para definir COMO entregar com qualidade.</p>
+      </div>
+
+      <div class="sidebar-widget">
+        <div class="widget-title">Valores do XP</div>
+        <ul class="checklist">
+          <li><span class="ck ck-xp">💬</span>Comunicação constante entre todos</li>
+          <li><span class="ck ck-xp">✂️</span>Simplicidade: fazer só o necessário</li>
+          <li><span class="ck ck-xp">🔁</span>Feedback contínuo e rápido</li>
+          <li><span class="ck ck-xp">💪</span>Coragem para mudar e refatorar</li>
+          <li><span class="ck ck-xp">🤝</span>Respeito entre os membros do time</li>
+        </ul>
+      </div>
+
+      <div class="sidebar-widget">
+        <div class="widget-title">Critérios SMART</div>
+        <ul class="checklist">
+          <li><span class="ck ck-smart">🔍</span><strong>S</strong>pecific — específico e claro</li>
+          <li><span class="ck ck-smart">📊</span><strong>M</strong>easurable — com números</li>
+          <li><span class="ck ck-smart">✅</span><strong>A</strong>chievable — realista e atingível</li>
+          <li><span class="ck ck-smart">🔗</span><strong>R</strong>elevant — alinhado ao negócio</li>
+          <li><span class="ck ck-smart">⏰</span><strong>T</strong>ime-bound — com prazo definido</li>
+        </ul>
+      </div>
+
+      <div class="sidebar-widget">
+        <div class="widget-title">Comparativo</div>
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Aspecto</th>
+              <th>XP</th>
+              <th>SMART</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Origem</td>
+              <td>1996</td>
+              <td>1981</td>
+            </tr>
+            <tr>
+              <td>Foco</td>
+              <td>Processo</td>
+              <td>Metas</td>
+            </tr>
+            <tr>
+              <td>Contexto</td>
+              <td>Dev de software</td>
+              <td>Qualquer área</td>
+            </tr>
+            <tr>
+              <td>Tipo</td>
+              <td><span class="badge" style="background:#FBEAF0;color:#993556">Metodologia</span></td>
+              <td><span class="badge" style="background:#E6F1FB;color:#185FA5">Framework</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="sidebar-widget">
+        <div class="widget-title">Leitura recomendada</div>
+        <ul class="checklist">
+          <li><span class="ck ck-xp">📗</span>Extreme Programming Explained — Kent Beck (2004)</li>
+          <li><span class="ck ck-smart">📘</span>There's a S.M.A.R.T. Way to Write Management Goals — Doran (1981)</li>
+          <li><span class="ck ck-xp">📙</span>Clean Code — Robert C. Martin</li>
+          <li><span class="ck ck-smart">📕</span>Measure What Matters — John Doerr</li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</main>
+
+<footer>
+  <strong>AgileMind Blog</strong> — Conteúdo educacional sobre metodologias ágeis. Feito com ☕ e muitas iterações.
+</footer>
+
+<script>
+  let current = 0;
+  let answered = new Array(8).fill(false);
+  let score = 0;
+
+  const feedbacks = [
+    "Exato! TDD é a base do XP. O ciclo Red→Green→Refactor garante que o código seja testado antes mesmo de existir.",
+    "Correto! M de Mensurável. Sem métrica, você não sabe se chegou lá.",
+    "Isso mesmo! Kent Beck criou o XP em 1996 durante o projeto Chrysler C3.",
+    "Perfeito! A meta SMART é específica, mensurável, tem prazo e é relevante.",
+    "Exatamente! Um navega, o outro pilota — e trocam de papel regularmente.",
+    "Isso! No XP, coragem significa refatorar código ruim, propor mudanças e dizer 'não' quando preciso.",
+    "Correto! Relevante garante que a meta serve ao propósito maior — não é só por fazer.",
+    "Correto! Integração Contínua evita o famoso 'integration hell' no final do sprint."
+  ];
+
+  document.querySelectorAll('.quiz-opt').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const qIdx = current;
+      if (answered[qIdx]) return;
+      answered[qIdx] = true;
+
+      const qEl = document.querySelector(`.quiz-q[data-q="${qIdx}"]`);
+      const allOpts = qEl.querySelectorAll('.quiz-opt');
+      const fb = qEl.querySelector('.quiz-feedback');
+
+      allOpts.forEach(o => o.classList.add('disabled'));
+
+      if (this.dataset.correct === 'true') {
+        this.classList.add('correct');
+        score++;
+        fb.textContent = '✓ ' + feedbacks[qIdx];
+        fb.className = 'quiz-feedback show good';
+      } else {
+        this.classList.add('wrong');
+        allOpts.forEach(o => { if (o.dataset.correct === 'true') o.classList.add('correct'); });
+        fb.textContent = '✗ ' + feedbacks[qIdx];
+        fb.className = 'quiz-feedback show bad';
+      }
+
+      document.getElementById('btn-next').disabled = false;
+      updateDots();
+    });
+  });
+
+  function nextQuestion() {
+    if (current < 7) {
+      document.querySelector(`.quiz-q[data-q="${current}"]`).classList.remove('active');
+      current++;
+      document.querySelector(`.quiz-q[data-q="${current}"]`).classList.add('active');
+      document.getElementById('btn-next').disabled = true;
+      updateDots();
+      if (current === 7 && answered[7]) showResult();
+    } else {
+      showResult();
+    }
+  }
+
+  function updateDots() {
+    const dots = document.querySelectorAll('.prog-dot');
+    dots.forEach((d, i) => {
+      d.classList.remove('active', 'done');
+      if (i < current) d.classList.add('done');
+      else if (i === current) d.classList.add('active');
+    });
+  }
+
+  function showResult() {
+    document.getElementById('quiz-questions').style.display = 'none';
+    document.getElementById('quiz-nav').style.display = 'none';
+    const result = document.getElementById('quiz-result');
+    result.classList.add('show');
+    document.getElementById('score-display').textContent = score + '/8';
+    const msgs = {
+      0: "Hmm... hora de reler o post! 😅",
+      1: "Quase lá, continue estudando! 📚",
+      2: "Quase lá, continue estudando! 📚",
+      3: "Bom começo! Dá pra melhorar 💪",
+      4: "Metade certa, continue praticando!",
+      5: "Muito bem! Você já entende bastante 👏",
+      6: "Excelente! Só um escorregão 🎯",
+      7: "Incrível! Quase perfeito! ⚡",
+      8: "PERFEITO! Mestre do XP e SMART! 🏆"
+    };
+    document.getElementById('score-msg').textContent = msgs[score];
+  }
+
+  function resetQuiz() {
+    current = 0; score = 0;
+    answered = new Array(8).fill(false);
+    document.querySelectorAll('.quiz-q').forEach((q, i) => {
+      q.classList.remove('active');
+      if (i === 0) q.classList.add('active');
+      q.querySelectorAll('.quiz-opt').forEach(o => o.className = 'quiz-opt');
+      q.querySelector('.quiz-feedback').className = 'quiz-feedback';
+    });
+    document.getElementById('quiz-questions').style.display = 'block';
+    document.getElementById('quiz-nav').style.display = 'flex';
+    document.getElementById('quiz-result').classList.remove('show');
+    document.getElementById('btn-next').disabled = true;
+    updateDots();
+  }
+
+  document.querySelectorAll('nav a').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      const id = a.getAttribute('href').slice(1);
+      document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+
+  document.querySelector('.hero-cta').addEventListener('click', e => {
+    e.preventDefault();
+    document.getElementById('quiz').scrollIntoView({ behavior: 'smooth' });
+  });
+</script>
+</body>
+</html>
+
