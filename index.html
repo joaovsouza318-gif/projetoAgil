@@ -487,6 +487,7 @@
 
   /* SIDEBAR */
   .sidebar { }
+  
   .sidebar-widget {
     background: var(--card);
     border: 1px solid var(--border);
@@ -589,7 +590,6 @@
     <nav>
       <a href="#xp">XP</a>
       <a href="#smart">SMART</a>
-      <a href="#memes">Memes</a>
       <a href="#quiz">Quiz</a>
     </nav>
   </div>
@@ -715,11 +715,6 @@
         </div>
       </div>
 
-      <div class="pull-quote">
-        <p>"O XP não é sobre fazer mais — é sobre fazer melhor. Menos código, mais valor, mais feedback."</p>
-        <cite>— Kent Beck, criador do Extreme Programming</cite>
-      </div>
-
       <!-- SMART ARTICLE -->
       <div id="smart" class="article-card" style="margin-top: 2.5rem;">
         <div class="card-image" style="background: #0D1F35; padding: 0; overflow: hidden;">
@@ -773,7 +768,7 @@
             <div class="p-name">R — Relevante</div>
             <div class="p-desc">Alinhado ao objetivo maior. Por que isso importa para o negócio agora?</div>
           </div>
-          <div class="pillar" style="grid-column: 1 / -1;">
+          <div class="pillar">
             <div class="p-icon">⏰</div>
             <div class="p-name">T — Temporal</div>
             <div class="p-desc">Toda meta precisa de prazo. Sem deadline, não é meta — é sonho. "Até 31 de dezembro" fecha o compromisso.</div>
@@ -781,47 +776,32 @@
         </div>
       </div>
 
-      <!-- MEME SECTION -->
-      <div id="memes" style="margin-top: 3rem;">
-        <p class="section-label">Leveza também é ágil</p>
-        <h2 class="section-title">Memes do Universo Ágil</h2>
-        <div class="meme-grid">
-          <div class="meme-card">
-            <div class="meme-img meme-bg-1">
-              <span class="meme-text-top">CLIENTE: "É SIMPLES,<br>SÓ MUDA UMA COISINHA"</span>
-              <span style="font-size: 3rem;">😵‍💫</span>
-              <span class="meme-text-bot">DEV DEPOIS DO SPRINT:<br>*ROLLBACK NAS METAS SMART*</span>
-            </div>
-            <div class="meme-caption">Quando a meta de "manutenção simples" não era muito A (Atingível)</div>
-          </div>
-          <div class="meme-card">
-            <div class="meme-img meme-bg-2">
-              <span class="meme-text-top">PAIR PROGRAMMING:<br>"VOU APENAS OLHAR"</span>
-              <span style="font-size: 3rem;">👀</span>
-              <span class="meme-text-bot">2 HORAS DEPOIS:<br>DOIS TECLADOS, ZERO COMMITS</span>
-            </div>
-            <div class="meme-caption">A prática do XP que começa como revisão e vira uma filosofia de vida</div>
-          </div>
-          <div class="meme-card">
-            <div class="meme-img meme-bg-3">
-              <span class="meme-text-top">META DO SPRINT:<br>"ENTREGAR ATÉ SEXTA"</span>
-              <span style="font-size: 3rem;">📅</span>
-              <span class="meme-text-bot">SEXTA ÀS 23H59:<br>*CRIA PR*</span>
-            </div>
-            <div class="meme-caption">T de Time-bound do SMART sendo respeitado... na última instância</div>
-          </div>
-          <div class="meme-card">
-            <div class="meme-img meme-bg-4">
-              <span class="meme-text-top">TDD NO XP: TESTE FALHA</span>
-              <span style="font-size: 3rem;">🟥🟩</span>
-              <span class="meme-text-bot">EU: PERFEITO, O TESTE<br>ESTÁ FUNCIONANDO</span>
-            </div>
-            <div class="meme-caption">O ciclo Red-Green-Refactor visto por quem acabou de descobrir o TDD</div>
-          </div>
-        </div>
+      <!-- QUIZ -->
+
+    </div><!-- end content-col -->
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="tip-box">
+        <div class="tip-label">💡 Dica rápida</div>
+        <p>XP e SMART não competem — eles se complementam. Use SMART para definir O QUÊ entregar e XP para definir COMO entregar com qualidade.</p>
       </div>
 
-      <!-- QUIZ -->
+      <div class="pull-quote">
+        <p>"Pegue seu pior problema resolva ele seguindo o XP. Quando ele já não for mais um problema, repita o processo"</p>
+        <cite>— Kent Beck, criador do Extreme Programming</cite>
+      </div>
+      
+      <div class="sidebar-widget">
+        <div class="widget-title">Leitura recomendada</div>
+        <ul class="checklist">
+          <li><span class="ck ck-xp">📗</span><a href="https://www.sydle.com/blog/extreme-programming-what-is-it-and-how-does-it-work-602ee205da4d096809438c9c" target="_blank" style="text-decoration: none;">Programação Extrema: O que é e como funciona? — Sidle</a></li>
+          <li><span class="ck ck-smart">📘</span>There's a S.M.A.R.T. Way to Write Management Goals — Doran</li>
+          <li><span class="ck ck-xp">📙</span><a href="https://ia800500.us.archive.org/16/items/codigo-limpo-robert-martin/codigo-limpo-completo-pt_text.pdf" target="_blank" style="text-decoration: none;">Clean Code — Robert C. Martin</a></li>
+          <li><span class="ck ck-smart">📕</span><a href="https://cdn.bookey.app/files/pdf/book/pt/avalie-o-que-importa.pdf" target="_blank" style="text-decoration: none;">Measure What Matters — John Doerr</a></li>
+        </ul>
+      </div>
+
       <div id="quiz" class="quiz-section">
         <div class="quiz-box">
           <div class="quiz-label">🧠 Teste seus conhecimentos</div>
@@ -949,81 +929,21 @@
         </div>
       </div>
 
-    </div><!-- end content-col -->
-
-    <!-- SIDEBAR -->
-    <aside class="sidebar">
-      <div class="tip-box">
-        <div class="tip-label">💡 Dica rápida</div>
-        <p>XP e SMART não competem — eles se complementam. Use SMART para definir O QUÊ entregar e XP para definir COMO entregar com qualidade.</p>
-      </div>
-
       <div class="sidebar-widget">
-        <div class="widget-title">Valores do XP</div>
-        <ul class="checklist">
-          <li><span class="ck ck-xp">💬</span>Comunicação constante entre todos</li>
-          <li><span class="ck ck-xp">✂️</span>Simplicidade: fazer só o necessário</li>
-          <li><span class="ck ck-xp">🔁</span>Feedback contínuo e rápido</li>
-          <li><span class="ck ck-xp">💪</span>Coragem para mudar e refatorar</li>
-          <li><span class="ck ck-xp">🤝</span>Respeito entre os membros do time</li>
-        </ul>
+        <div class="widget-title">Vídeo recomendado</div>
+        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px;">
+          <iframe
+            src="https://youtu.be/aYM9aWkeyfc?si=Sw8NzFV3J6kYTHda"
+            title="Vídeo sobre XP e SMART"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 8px;">
+          </iframe>
+        </div>
+        <a href="https://youtu.be/aYM9aWkeyfc?si=Sw8NzFV3J6kYTHda" target="_blank" style="font-size: 0.82rem; color: var(--ink3); margin-top: 10px; line-height: 1.5;">Clique Aqui se não carregar</p>
       </div>
 
-      <div class="sidebar-widget">
-        <div class="widget-title">Critérios SMART</div>
-        <ul class="checklist">
-          <li><span class="ck ck-smart">🔍</span><strong>S</strong>pecific — específico e claro</li>
-          <li><span class="ck ck-smart">📊</span><strong>M</strong>easurable — com números</li>
-          <li><span class="ck ck-smart">✅</span><strong>A</strong>chievable — realista e atingível</li>
-          <li><span class="ck ck-smart">🔗</span><strong>R</strong>elevant — alinhado ao negócio</li>
-          <li><span class="ck ck-smart">⏰</span><strong>T</strong>ime-bound — com prazo definido</li>
-        </ul>
-      </div>
-
-      <div class="sidebar-widget">
-        <div class="widget-title">Comparativo</div>
-        <table class="comparison-table">
-          <thead>
-            <tr>
-              <th>Aspecto</th>
-              <th>XP</th>
-              <th>SMART</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Origem</td>
-              <td>1996</td>
-              <td>1981</td>
-            </tr>
-            <tr>
-              <td>Foco</td>
-              <td>Processo</td>
-              <td>Metas</td>
-            </tr>
-            <tr>
-              <td>Contexto</td>
-              <td>Dev de software</td>
-              <td>Qualquer área</td>
-            </tr>
-            <tr>
-              <td>Tipo</td>
-              <td><span class="badge" style="background:#FBEAF0;color:#993556">Metodologia</span></td>
-              <td><span class="badge" style="background:#E6F1FB;color:#185FA5">Framework</span></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="sidebar-widget">
-        <div class="widget-title">Leitura recomendada</div>
-        <ul class="checklist">
-          <li><span class="ck ck-xp">📗</span><a href="https://www.sydle.com/blog/extreme-programming-what-is-it-and-how-does-it-work-602ee205da4d096809438c9c" target="_blank">Programação Extrema: O que é e como funciona? — Sidle (2024)</a></li>
-          <li><span class="ck ck-smart">📘</span>There's a S.M.A.R.T. Way to Write Management Goals — Doran (1981)</li>
-          <li><span class="ck ck-xp">📙</span>Clean Code — Robert C. Martin</li>
-          <li><span class="ck ck-smart">📕</span>Measure What Matters — John Doerr</li>
-        </ul>
-      </div>
     </aside>
   </div>
 </main>
@@ -1037,15 +957,26 @@
   let answered = new Array(8).fill(false);
   let score = 0;
 
-  const feedbacks = [
-    "Exato! TDD é a base do XP. O ciclo Red→Green→Refactor garante que o código seja testado antes mesmo de existir.",
-    "Correto! M de Mensurável. Sem métrica, você não sabe se chegou lá.",
-    "Isso mesmo! Kent Beck criou o XP em 1996 durante o projeto Chrysler C3.",
-    "Perfeito! A meta SMART é específica, mensurável, tem prazo e é relevante.",
-    "Exatamente! Um navega, o outro pilota — e trocam de papel regularmente.",
-    "Isso! No XP, coragem significa refatorar código ruim, propor mudanças e dizer 'não' quando preciso.",
-    "Correto! Relevante garante que a meta serve ao propósito maior — não é só por fazer.",
-    "Correto! Integração Contínua evita o famoso 'integration hell' no final do sprint."
+  const feedbacksCorrect = [
+    "✓ Isso mesmo! TDD (Test-Driven Development) é a base do XP. O ciclo Red→Green→Refactor garante que o código seja testado antes mesmo de existir.",
+    "✓ Correto! M de Mensurável. Sem uma métrica definida, você nunca sabe se chegou lá.",
+    "✓ Isso mesmo! Kent Beck criou o XP em 1996 durante o projeto Chrysler C3.",
+    "✓ Perfeito! Essa meta tem número (42→55), prazo (30/06) e contexto claro — todos os critérios SMART aplicados.",
+    "✓ Exatamente! Um pilota, o outro navega — e trocam de papel regularmente durante a sessão.",
+    "✓ Isso! Coragem no XP significa refatorar código ruim, propor mudanças difíceis e dizer 'não' quando preciso.",
+    "✓ Correto! Relevante garante que a meta serve ao propósito maior do negócio — não existe só por existir.",
+    "✓ Certo! Integração Contínua evita o famoso 'integration hell' acumulado no final do sprint."
+  ];
+
+  const feedbacksWrong = [
+    "✗ Errado. TDD significa Test-Driven Development — desenvolvimento guiado por testes. O teste é escrito primeiro, o código vem depois.",
+    "✗ Errado. M é de Mensurável (Measurable). A meta precisa de um número concreto para que você saiba quando chegou lá.",
+    "✗ Errado. O criador do XP foi Kent Beck, em 1996, durante o projeto Chrysler C3. Jeff Sutherland criou o Scrum; Martin Fowler é referência em refatoração.",
+    "✗ Errado. A opção correta é 'Aumentar o NPS de 42 para 55 até 30/06/2025' — ela é específica, mensurável, tem prazo e é relevante. As outras são vagas demais.",
+    "✗ Errado. No Pair Programming dois devs compartilham o mesmo computador simultaneamente — um escreve o código, o outro revisa em tempo real.",
+    "✗ Errado. O valor relacionado a não ter medo de mudar e refatorar é a Coragem. Comunicação, Respeito e Simplicidade são outros valores do XP.",
+    "✗ Errado. R é de Relevante — a meta deve estar alinhada ao objetivo maior do negócio. O A (Achievable) é que representa o critério de ser atingível.",
+    "✗ Errado. Integração Contínua é integrar o código ao repositório principal várias vezes ao dia, sempre com testes automáticos rodando."
   ];
 
   document.querySelectorAll('.quiz-opt').forEach(btn => {
@@ -1063,12 +994,12 @@
       if (this.dataset.correct === 'true') {
         this.classList.add('correct');
         score++;
-        fb.textContent = '✓ ' + feedbacks[qIdx];
+        fb.textContent = feedbacksCorrect[qIdx];
         fb.className = 'quiz-feedback show good';
       } else {
         this.classList.add('wrong');
         allOpts.forEach(o => { if (o.dataset.correct === 'true') o.classList.add('correct'); });
-        fb.textContent = '✗ ' + feedbacks[qIdx];
+        fb.textContent = feedbacksWrong[qIdx];
         fb.className = 'quiz-feedback show bad';
       }
 
